@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const PostController = require('../../controller/PostController');
 
 /**
  * @route api/posts/test
@@ -6,7 +7,7 @@ const router = require('express').Router();
  * @access Public
  */
 router.get('/', (req, res) => {
-  res.json({ result: 'posts router is working' });
+  PostController.getPostByTags(req, res);
 });
 
 /**
