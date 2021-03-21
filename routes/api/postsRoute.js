@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { cacheMiddleware } = require('../../middlewares/cacheMiddleware');
 const PostController = require('../../controller/PostController');
 
 /**
@@ -6,7 +7,7 @@ const PostController = require('../../controller/PostController');
  * @desc Test posts route
  * @access Public
  */
-router.get('/', (req, res) => {
+router.get('/', cacheMiddleware(30), (req, res) => {
   PostController.getPostByTags(req, res);
 });
 
