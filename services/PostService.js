@@ -26,7 +26,7 @@ module.exports = class PostService {
 
       let allPostByTags = await PostLibrary.getPostByTags(listOfTags);
 
-      // Combine and remove duplicate when search for posts which multiple tags
+      // Combine and remove duplicate when search for posts with multiple tags
       if (listOfTags.length > 1) {
         // Combine Post
         allPostByTags = PostLibrary.mergeMultiplePost(allPostByTags);
