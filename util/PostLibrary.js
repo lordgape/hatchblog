@@ -31,7 +31,7 @@ module.exports = {
     let comparison = 0;
 
     if (typeof a[key] === 'string') {
-      comparison = a[key].localCompare(a[key]);
+      comparison = a[key].localCompare(b[key]);
     } else {
       comparison = +a[key] - +b[key];
     }
