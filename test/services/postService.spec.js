@@ -218,7 +218,7 @@ describe('PostService', function () {
     expect(result).to.deep.equal(mockPostSortByIdAscending);
   });
 
-  it('can make multiple calls to get posts', async function () {
+  it('can make multiple calls to get a posts', async function () {
     const result = await PostLibrary.getPostByTags(['tech']);
     expect(result).to.deep.equal([mockMultiplePosts]);
   });
