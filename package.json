@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha 'test/**/*.spec.js'"
+    "test": "mocha 'test/**/*.spec.js'",
+    "test:coverage": "NODE_ENV=test nyc --reporter=html --reporter=text mocha 'test/**/*.spec.js'"
   },
   "author": "Chesvic Lordgape",
   "license": "MIT",

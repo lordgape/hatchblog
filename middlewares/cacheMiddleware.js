@@ -5,9 +5,10 @@ const memCache = new cache.Cache();
 
 const cacheMiddleware = (duration) => {
   return (req, res, next) => {
-    let key = '__express__' + req.query.tag + req.query.sortBy + req.query.direction || {};
+    let key = '__express__' + req.query.tags + req.query.sortBy + req.query.direction || {};
     let cacheContent = memCache.get(key);
     if (cacheContent) {
+      console.log("cache hit");
       res.json(cacheContent);
       return;
     } else {

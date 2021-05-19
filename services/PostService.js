@@ -33,14 +33,17 @@ module.exports = class PostService {
 
         // Remove Duplicate post.
         allPostByTags = PostLibrary.removeDulplicatePost(allPostByTags);
-      }
+      } 
 
       //sort post
       allPostByTags.sort(PostLibrary.comparePostByKey(sortBy, direction));
 
+      allPostByTags = listOfTags.length > 1 ? allPostByTags : allPostByTags[0].posts;
       let foundPosts = allPostByTags ? allPostByTags : [];
 
-      // console.log("foundPosts",foundPosts);
+      
+
+      console.log("foundPosts",foundPosts[0]);
 
       return new AppResponse(ResponseCode.SUCCESS, foundPosts, []);
     } catch (error) {
