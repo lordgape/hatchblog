@@ -1,4 +1,4 @@
-const cache = require('memory-cache');
+const cache = require('memory-cache'); 
 
 // configure cache middleware
 const memCache = new cache.Cache();

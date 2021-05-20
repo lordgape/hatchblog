@@ -39,13 +39,8 @@ module.exports = class PostService {
       allPostByTags.sort(PostLibrary.comparePostByKey(sortBy, direction));
 
       allPostByTags = listOfTags.length > 1 ? allPostByTags : allPostByTags[0].posts;
-      let foundPosts = allPostByTags ? allPostByTags : [];
-
       
-
-      console.log("foundPosts",foundPosts[0]);
-
-      return new AppResponse(ResponseCode.SUCCESS, foundPosts, []);
+      return new AppResponse(ResponseCode.SUCCESS, allPostByTags, []);
     } catch (error) {
       if (error instanceof AppError) {
         throw error;
