@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const nock = require('nock');
-const config = require('../../config/config.json');
+const config = require('../../config/dist.config.json');
 
 const PostLibrary = require('../../util/PostLibrary');
 
