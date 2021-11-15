@@ -44,7 +44,7 @@ jobs:
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
         with:
-          LOCUSTFILE: "locustfile.py"
+          LOCUSTFILE: "/test/load/locustfile.py"
           URL:  "http://localhost:4000"
           USERS: "5"
           RATE: "5"
