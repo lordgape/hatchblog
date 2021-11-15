@@ -24,7 +24,7 @@ module.exports = (app) => {
     max: 100,
   });
 
-  app.use(allAPILimit);
+  // app.use(allAPILimit);
 
 
   if (global.process.env.NODE_ENV !== 'testing') {

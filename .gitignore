@@ -120,3 +120,6 @@ dist
 
 # Configuration
 config/config.json
+
+# script
+test/loadtest/__pycache__
