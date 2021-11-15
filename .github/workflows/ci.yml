@@ -39,6 +39,8 @@ jobs:
         uses: actions/checkout@v1
       - name: Switch to test location
         run: cd test/load
+      - name: Confirm file
+        run: ls
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
         with:
