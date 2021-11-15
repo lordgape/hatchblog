@@ -30,3 +30,20 @@ jobs:
     - run: npm run build --if-present
     - run: cp ./config/dist.config.json ./config/config.json
     - run: npm test
+  
+  Performance:
+    runs-on: ubuntu-latest
+    needs: [build]
+    
+    steps:
+    - name: Start Application 
+    - run: npm start
+    - run: cd test/loadtest/
+    - name: Locust Load Test
+      uses: apardo04/locust-github-action@1.0.0
+      with:
+        LOCUSTFILE: locustfile.py
+        # URL to the site you want to load test. This is Required!
+        URL: "http://localhost:4000"
+        
+    
