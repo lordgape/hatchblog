@@ -42,7 +42,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Confirm file
+      - name: Confirm application is running
         run: docker ps
       - name: Run Load Test
         uses: apardo04/locust-github-action@master
