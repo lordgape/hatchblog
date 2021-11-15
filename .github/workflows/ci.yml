@@ -38,11 +38,8 @@ jobs:
   
     - name: Confirm application is running
       run: docker ps
-    - name: Run Load Test
-      uses: apardo04/locust-github-action@master
-      with:
-        LOCUSTFILE: "/test/load/locustfile.py"
-        URL:  "http://localhost:4000"
-        USERS: "5"
-        RATE: "5"
-        RUNTIME: "10s"
+    - name: Setup Load Test
+      run: |
+       pip3 install locust
+       cd test/load
+       ls
