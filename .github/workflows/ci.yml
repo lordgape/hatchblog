@@ -30,6 +30,7 @@ jobs:
     - run: npm run build --if-present
     - run: cp ./config/dist.config.json ./config/config.json
     - run: npm test
+    - run: npm start
   
   Perfomance:
     runs-on: ubuntu-latest
