@@ -30,6 +30,11 @@ jobs:
     - run: npm run build --if-present
     - run: cp ./config/dist.config.json ./config/config.json
     - run: npm test
+    
+    - name: Build and Start Container
+      run: |
+        docker build -t hatchblog .
+        docker run -dp 4000:4000 hatchblog
   
   # Perfomance:
   #   runs-on: ubuntu-latest
