@@ -1,4 +1,3 @@
-
 const compression = require('compression');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -21,7 +20,7 @@ module.exports = (app) => {
   // Set Rate limter per API per IP
   const allAPILimit = new limiter({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 100
   });
 
   // app.use(allAPILimit);
@@ -39,9 +38,9 @@ module.exports = (app) => {
           skip: function (req, res) {
             // Ignore healthcheck so it doesn't flood logger
             return req.originalUrl === '/';
-          },
-        },
-      ),
+          }
+        }
+      )
     );
   }
 };
