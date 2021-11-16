@@ -38,8 +38,12 @@ jobs:
   
     - name: Confirm application is running
       run: docker ps
+
     - name: Setup Load Test
       run: |
        pip3 install locust
        cd test/load
        ls
+    
+    - name: Run load test
+      run: locust -f locustfile.py --headless -u 100 -r 5 --run-time "10s" -H "http://localhost:4000"
