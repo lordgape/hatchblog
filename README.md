@@ -2,6 +2,7 @@
 # Description
 
 [Hatchblog](https://github.com/lordgape/hatchblog) Blog post Integration using hatchway.
+
 ![Tests](https://github.com/lordgape/hatchblog/actions/workflows/ci.yml/badge.svg)
 
 ## Installation
