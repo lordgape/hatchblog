@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-const DevToolkit = require('../../util/DevToolkit');
+const DevToolkit = require('../../src/util/DevToolkit');
 
 
 describe('Validations', function () {

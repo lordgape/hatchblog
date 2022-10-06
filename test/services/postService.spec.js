@@ -1,8 +1,8 @@
 const expect = require('chai').expect;
 const nock = require('nock');
-const config = require('../../config/config.json');
+const config = require('../../src/config/config.json');
 
-const PostLibrary = require('../../util/PostLibrary');
+const PostLibrary = require('../../src/util/PostLibrary');
 
 const mockUnorderedPosts = [
   {

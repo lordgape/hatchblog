@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-require('./middlewares')(app);
+require('./src/middlewares')(app);
 
 // Setup route
-const route = require('./routes/route');
+const route = require('./src/routes/route');
 route(app);
 
 //Set up port

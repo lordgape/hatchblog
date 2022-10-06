@@ -7,7 +7,10 @@
     "start": "node .",
     "dev": "nodemon .",
     "test": "mocha 'test/**/*.spec.js'",
-    "test:coverage": "NODE_ENV=test nyc --reporter=html --reporter=text mocha 'test/**/*.spec.js'"
+    "test:coverage": "NODE_ENV=test nyc --reporter=html --reporter=text mocha 'test/**/*.spec.js'",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "author": "Chesvic Lordgape",
   "license": "MIT",
@@ -19,7 +22,8 @@
     "nodemon": "^2.0.7",
     "nyc": "^15.1.0",
     "rewire": "^5.0.0",
-    "sinon": "^9.2.4"
+    "sinon": "^9.2.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -30,6 +34,7 @@
     "helmet": "^4.4.1",
     "memory-cache": "^0.2.0",
     "morgan": "^1.10.0",
+    "prettier": "^2.7.1",
     "request": "^2.88.2",
     "response-time": "^2.3.2",
     "swagger-jsdoc": "^6.1.0",
