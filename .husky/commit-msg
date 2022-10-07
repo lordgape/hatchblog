@@ -4,8 +4,8 @@
 #
 
 #Check for Valid branch name
-string='My long string'
-if [[ $string == *"My long"* ]]; then
+string='yes My long string'
+   if [[ "${str}" == *"yes"* ]] ;then
   echo "It's there!"
 fi
 NAME=$(git branch | grep '*' | sed 's/* //') 
