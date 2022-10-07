@@ -4,9 +4,10 @@
 #
 
 #Check for Valid branch name
-string='yes My long string'
-if [[ "${string}" == *"yes"* ]] ;then
-  echo "It's there!"
+if echo "abcdefg" | grep -q "bcdef"; then
+    echo "String contains is true."
+else
+    echo "String contains is not true."
 fi
 NAME=$(git branch | grep '*' | sed 's/* //') 
 if [[ $NAME == *"HATCH-2"* ]]; then
