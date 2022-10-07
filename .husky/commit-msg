@@ -9,7 +9,6 @@ if [[ $string == *"My long"* ]]; then
   echo "It's there!"
 fi
 NAME=$(git branch | grep '*' | sed 's/* //') 
-echo $NAME
 if [[ $NAME == *"HATCH-2"* ]]; then
     echo "Warning.$NAME It is best practise to use Jira ID for branch name " >&2    
 fi
