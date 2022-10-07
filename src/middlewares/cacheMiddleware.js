@@ -1,4 +1,4 @@
-const cache = require('memory-cache'); 
+const cache = require('memory-cache');
 
 // configure cache middleware
 const memCache = new cache.Cache();
@@ -8,7 +8,7 @@ const cacheMiddleware = (duration) => {
     let key = '__express__' + req.query.tags + req.query.sortBy + req.query.direction || {};
     let cacheContent = memCache.get(key);
     if (cacheContent) {
-      console.log("cache hit");
+      console.log('cache hit');
       res.json(cacheContent);
       return;
     } else {

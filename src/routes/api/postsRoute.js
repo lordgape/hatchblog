@@ -8,6 +8,7 @@ const PostController = require('../../controller/PostController');
  * @access Public
  */
 router.get('/', cacheMiddleware(30), (req, res) => {
+
   PostController.getPostByTags(req, res);
 });
 

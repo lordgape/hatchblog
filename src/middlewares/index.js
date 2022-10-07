@@ -3,7 +3,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const responseTime = require('response-time');
 const corsOptions = require('./corsSetup');
-const limiter = require('express-rate-limit');
+// const limiter = require('express-rate-limit');
 const bodyParser = require('body-parser');
 
 module.exports = (app) => {
@@ -18,16 +18,16 @@ module.exports = (app) => {
   app.use(bodyParser.json());
 
   // Set Rate limter per API per IP
-  const allAPILimit = new limiter({
-    windowMs: 15 * 60 * 1000,
-    max: 100
-  });
+  // const allAPILimit = new limiter({
+  //   windowMs: 15 * 60 * 1000,
+  //   max: 100
+  // });
 
   // app.use(allAPILimit);
 
 
   if (global.process.env.NODE_ENV !== 'testing') {
-    morgan.token('payload', function (req, res) {
+    morgan.token('payload', function (req) {
       return JSON.stringify(req.body);
     });
     app.use(
@@ -35,7 +35,7 @@ module.exports = (app) => {
         ':remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms ":referrer" ":user-agent" ":payload"',
         {
           // eslint-disable-next-line object-shorthand
-          skip: function (req, res) {
+          skip: function (req) {
             // Ignore healthcheck so it doesn't flood logger
             return req.originalUrl === '/';
           }

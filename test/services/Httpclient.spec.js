@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const nock = require('nock');
 
-const Httpclient = require('../../util/HttpClient');
+const Httpclient = require('../../src/util/HttpClient');
 
 const baseURL = 'http://www.example.com';
 const payload = { tag: 'admin', access: 12345 };
