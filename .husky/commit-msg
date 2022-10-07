@@ -4,9 +4,9 @@
 #
 
 #Check for Valid branch name
-#!/bin/sh
-if ! head -1 "$1" | grep -qE "^(HATCH)(\(.+?\))?: .{1,}$"; then
-    echo "Warning. It is best practise to use Jira ID for branch name " >&2    
+NAME=$(git branch | grep '*' | sed 's/* //') 
+if ! echo $NAME | grep -q "HATCH-"; then
+    echo "Warning.$NAME It is best practise to use Jira ID for branch name " >&2    
 fi
 if ! head -1 "$1" | grep -qE "^.{1,88}$"; then
     echo "Aborting commit. Your commit message is too long." >&2
@@ -14,7 +14,7 @@ if ! head -1 "$1" | grep -qE "^.{1,88}$"; then
 fi
 
 #Add valid branch name to commit message
-NAME=$(git branch | grep '*' | sed 's/* //') 
+
 DESCRIPTION=$(git config branch."$NAME".description)
 TEXT=$(cat "$1" | sed '/^#.*/d')
 
