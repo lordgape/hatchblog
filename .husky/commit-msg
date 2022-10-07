@@ -6,7 +6,7 @@
 #Check for Valid branch name
 #!/bin/sh
 if ! head -1 "$1" | grep -qE "^(HATCH-)(\D)?: .{1,}$"; then
-    echo "Warning. It is best practise to use Jira ID for branch name " >&2    
+    echo "Warning.$1 It is best practise to use Jira ID for branch name " >&2    
 fi
 if ! head -1 "$1" | grep -qE "^.{1,88}$"; then
     echo "Aborting commit. Your commit message is too long." >&2
