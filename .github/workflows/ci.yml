@@ -40,8 +40,7 @@ jobs:
       run: docker ps
 
     - name: Install locust
-      run: pip3 install locust
-       
+      run: pip3 install locust       
     
     - name: Run load test
       run: |
