@@ -8,7 +8,9 @@ NAME=$(git branch | grep '*' | sed 's/* //')
 branchName="^HATCH-([0-9]+)*-(build|ci|docs|ft|bg|ht|)(\\([a-z]+\\)){0,1}"
 msg="HATCH-([0-9]+)*-(build|ci|docs|ft|bg|ht|)(\\([a-z]+\\)){0,1}"
 if ! echo $NAME | grep -qE $branchName; then
-    echo "XXXXX WARNING XXXXX. Branch name should follow pattern $msg " >&2    
+    echo ""
+    echo "XXXXX WARNING XXXXX. Branch name should follow pattern $msg " >&2  
+    echo ""  
 fi
 
 
