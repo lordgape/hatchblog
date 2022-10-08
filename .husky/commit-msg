@@ -5,7 +5,7 @@
 
 #Check for Valid branch name
 NAME=$(git branch | grep '*' | sed 's/* //') 
-if ! echo $NAME | grep -q "^(HATCH-)(\\([1-9]+\\))(build|ci|docs|ft|bg|ht|)(-)(\\([a-z]+\\)){0,1}$"; then
+if ! echo $NAME | grep -q "HATCH-([0-9]+)*-"; then
     echo "WARNING XXX. It is best practise to use Jira ID for branch name " >&2    
 fi
 if ! head -1 "$1" | grep -qE "^.{1,88}$"; then
