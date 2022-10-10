@@ -10,6 +10,7 @@ TEXT=$(cat "$1" | sed '/^#.*/d')
 if [ -n "$TEXT" ]
 then
     # echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
+    echo ""
 fi
 
-printf `git log -1 --pretty=$NAME%s` > .git/.gitmessage.txt
+printf `git log -1 --pretty=$NAME:%s` > .git/.gitmessage.txt
