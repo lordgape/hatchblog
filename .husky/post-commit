@@ -1,0 +1,6 @@
+#!/bin/sh
+# .git/hooks/post-commit
+# re-use last commit message
+#########################################################
+
+printf "`git log -1 --pretty=%s`" > .git/.gitmessage.txt
