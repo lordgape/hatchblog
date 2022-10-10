@@ -12,4 +12,4 @@ then
     echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
 fi
 
-printf $NAME > .git/.gitmessage.txt
+printf `git log -1 --pretty=$NAME: %s` > .git/.gitmessage.txt

@@ -3,4 +3,4 @@
 # Writes the Jira Id + Jira summary from the recently checked out branch name to the git commit template.
 #########################################################################################################
 
-printf "`git rev-parse --abbrev-ref HEAD | sed 's/-/❤/' | sed -E 's/[-|_]+/ /g' | sed 's/❤/-/'`" > .git/.gitmessage.txt
+printf "`git rev-parse --abbrev-ref HEAD | grep -o 'HATCH-[0-9]*' | sed 's/* //'`" > .git/.gitmessage.txt
