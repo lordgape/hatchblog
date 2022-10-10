@@ -9,10 +9,4 @@ TEXT=$(cat "$1" | sed '/^#.*/d')
 
 echo $DESCRIPTION
 
-if [ -n "$TEXT" ]
-then
-    # echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
-    echo ""
-fi
-
 printf "$NAME: $DESCRIPTION %s %s "> .git/.gitmessage.txt
