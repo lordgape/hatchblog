@@ -3,7 +3,7 @@
 # re-use last commit message
 #########################################################
 
-NAME=$(git branch | grep '*' | sed 's/* //') 
+NAME=$(git branch | grep '*/^#.*/d' | sed 's/* //') 
 DESCRIPTION=$(git config branch."$NAME".description)
 TEXT=$(cat "$1" | sed '/^#.*/d')
 
@@ -12,4 +12,4 @@ then
     echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
 fi
 
-printf $TEXT > .git/.gitmessage.txt
+printf $NAME > .git/.gitmessage.txt
