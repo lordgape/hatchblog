@@ -3,7 +3,7 @@
 # re-use last commit message
 #########################################################
 
-NAME=$(git branch | grep '*' | sed 's/HATCH-*/d //') 
+NAME=$(git branch | grep '*' | sed 's/HATCH //') 
 DESCRIPTION=$(git config branch."$NAME".description)
 TEXT=$(cat "$1" | sed '/^#.*/d')
 
