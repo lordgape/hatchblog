@@ -4,7 +4,7 @@
 #########################################################
 
 NAME=$(git rev-parse --abbrev-ref HEAD | grep -o 'HATCH-[0-9]*' | sed 's/* //') 
-DESCRIPTION=$(git log -1 %s)
+DESCRIPTION=$(git log -1 --pretty=%s)
 TEXT=$(cat "$1" | sed '/^#.*/d')
 
 echo $DESCRIPTION
@@ -15,4 +15,4 @@ then
     echo ""
 fi
 
-printf "$NAME $DESCRIPTION --pretty=%s %s "> .git/.gitmessage.txt
+printf "$NAME $DESCRIPTION %s %s "> .git/.gitmessage.txt
