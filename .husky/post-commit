@@ -15,4 +15,4 @@ then
     echo ""
 fi
 
-printf "$NAME $DESCRIPTION %s %s "> .git/.gitmessage.txt
+printf "$NAME: $DESCRIPTION %s %s "> .git/.gitmessage.txt
