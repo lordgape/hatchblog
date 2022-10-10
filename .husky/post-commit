@@ -3,4 +3,13 @@
 # re-use last commit message
 #########################################################
 
+NAME=$(git branch | grep '*' | sed 's/* //') 
+DESCRIPTION=$(git config branch."$NAME".description)
+TEXT=$(cat "$1" | sed '/^#.*/d')
+
+if [ -n "$TEXT" ]
+then
+    echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
+fi
+
 printf "`git log -1 --pretty=%s`" > .git/.gitmessage.txt
