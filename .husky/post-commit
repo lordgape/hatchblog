@@ -13,4 +13,4 @@ then
     echo ""
 fi
 
-printf `--pretty=$NAME%s` > .git/.gitmessage.txt
+printf `$NAME` > .git/.gitmessage.txt
