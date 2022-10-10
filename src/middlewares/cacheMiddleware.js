@@ -3,7 +3,7 @@ const cache = require('memory-cache');
 // configure cache middleware
 const memCache = new cache.Cache();
 
-const cacheMiddleware = (duration) => {
+const cacheMiddleware = duration => {
   return (req, res, next) => {
     let key = '__express__' + req.query.tags + req.query.sortBy + req.query.direction || {};
     let cacheContent = memCache.get(key);
@@ -13,7 +13,7 @@ const cacheMiddleware = (duration) => {
       return;
     } else {
       res.sendResponse = res.json;
-      res.json = (body) => {
+      res.json = body => {
         memCache.put(key, body, duration * 1000);
         res.sendResponse(body);
       };
