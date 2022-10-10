@@ -11,5 +11,3 @@ if [ -n "$TEXT" ]
 then
     echo "$NAME"': '$(cat "$1" | sed '/^#.*/d') > .git/.gitmessage.txt
 fi
-
-printf "`git log -1 --pretty=%s`" > .git/.gitmessage.txt
